@@ -64,6 +64,7 @@ import vItem from "../ui/v-item/v-item.vue";
 import { onClickOutside } from "@vueuse/core";
 import vNumberInput from "../ui/v-number-input/v-number-input.vue";
 import vSkeleton from "../ui/v-skeleton/v-skeleton.vue";
+import vTransitionFade from "../ui/v-transition/v-transition-fade/v-transition-fade.vue";
 
 const { isOpen, closeModal, openModal } = useModal();
 const props = defineProps<IInventory>();

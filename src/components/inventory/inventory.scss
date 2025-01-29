@@ -34,9 +34,6 @@
 .cell-selected{
   background-color: var(--app-main-bright);
 }
- :global(.cell-selected .item-quantity){
-  color: var(--main-text)
- }
 
 .cell-quantity{
     color: var(--main-text-contrast);
