@@ -1,0 +1,120 @@
+.inventory-container{
+  display: flex;
+  position: relative;
+  min-width: 525px;
+  width: 100%;
+  min-height: 525px;
+  height: 100%;
+   max-width: 525px;
+   overflow: hidden;
+}
+
+.inventory {
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  border-radius: 10px;
+  min-height: 100%;
+  min-width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: fit-content;
+  border: 2px solid var(--border-color);
+}
+
+.cell {
+    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--app-main);
+  border: 1px solid var(--border-color);
+}
+
+.cell-selected{
+  background-color: var(--app-main-bright);
+}
+ :global(.cell-selected .item-quantity){
+  color: var(--main-text)
+ }
+
+.cell-quantity{
+    color: var(--main-text-contrast);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.item-image {
+  padding-top: 50px;
+  padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 200px;
+    width: 100%;
+}
+
+
+.item:active {
+  cursor: grabbing;
+}
+
+.confirm-delete {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.confirm-actions {
+    display: flex;
+    column-gap: 20px;
+    row-gap: 8px;
+}
+.skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.actions-btn {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); 
+}
+
+@keyframes drop {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.cell {
+  &.is-dropping {
+    animation: drop 0.3s ease-in-out;
+  }
+}
+ 
+.modal-enter-from, .modal-leave-to {
+  transform: translateX(240px);
+  opacity: 0;
+}
+
+.modal-enter-to, .modal-leave-from {
+  transform: translateX(0); 
+  
+}
+
+.modal-enter-active, .modal-leave-active {
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+.floating-item {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: transform 0.1s ease;
+}
+
